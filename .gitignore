@@ -35,3 +35,5 @@ yarn-error.log*
 .env
 
 how-to.txt
+
+how-to-create-api.txt
