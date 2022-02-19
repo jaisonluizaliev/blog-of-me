@@ -4,7 +4,6 @@ import Image from 'next/image';
 import React, { useContext, useEffect } from 'react';
 import {
   ButtonCommom,
-  ButtonIsAdmin,
   Container,
   ContentMain,
   FirstChildContent,
