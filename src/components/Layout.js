@@ -1,7 +1,7 @@
 import { RiLoginBoxLine } from 'react-icons/ri';
 import Head from 'next/head';
 import Image from 'next/image';
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import {
   ButtonCommom,
   ButtonIsAdmin,
@@ -28,6 +28,10 @@ export default function Layout({ children, title, contents }) {
 
   const { state, dispatch } = useContext(Store);
   const { userInfo } = state;
+
+  // const { isAdmin } = userInfo;
+  useEffect(() => {}, []);
+
   const handleLogout = () => {
     dispatch({ type: 'USER_LOGOUT' });
     jsCookie.remove('userInfo');
@@ -63,17 +67,11 @@ export default function Layout({ children, title, contents }) {
               chegar onde estou... &#34;
             </cite>
           </p>
+
           <LoginButtonContainer>
             {userInfo ? (
               <>
-                {userInfo.isAdmin && (
-                  <ButtonIsAdmin type="button">{userInfo.name}</ButtonIsAdmin>
-                )}
-
-                {!userInfo.isAdmin && (
-                  <ButtonCommom type="button">{userInfo.name}</ButtonCommom>
-                )}
-
+                <ButtonCommom type="button">{userInfo.name}</ButtonCommom>
                 <ButtonCommom type="button" onClick={handleLogout}>
                   Sair
                   <span>
