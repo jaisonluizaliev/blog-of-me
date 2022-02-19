@@ -1,16 +1,22 @@
+import bcrypt from "bcryptjs";
+
 const data = {
-  user: [
+  users: [
     {
-      
       name: 'jaison',
-      email: 'jaison@jaison',
-      password: ' Encrypted',
+      email: 'jaison-adm@hotmail.com',
+      password: bcrypt.hashSync('1234567'),
+      isAdmin: true,
+    },
+    {
+      name: 'sabrina',
+      email: 'sabrina@hotmail.com',
+      password: bcrypt.hashSync('1234567'),
       isAdmin: false,
     },
   ],
   contents: [
     {
-      
       heading: 'Depressão é um transtorno mental',
       slug: 'depressão-e-um-transtorno-mental',
       text: 'Depressão é um transtorno mental caracterizado por tristeza profunda persistente e aversão a atividades. Pode afetar os pensamentos, comportamentos, sentimentos e o bem-estar de uma pessoa.[1][2] As pessoas deprimidas podem sentir-se tristes, ansiosas, desesperadas, vazias, preocupadas, impotentes, inúteis, culpadas, irritadas, magoadas ou inquietas. Podem perder o interesse em atividades que antes eram prazerosas, podem perder o apetite ou comer demais, apresentar problemas de concentração, dificuldade para lembrar detalhes ou tomar decisões e podem contemplar ou tentar o suicídio. Problemas de insônia, sono excessivo, fadiga, perda de energia, mudança na alimentação, sofrimento, dores ou problemas digestivos resistentes a tratamento também podem estar presentes.[3]',
@@ -18,7 +24,6 @@ const data = {
       // author: this.user.name,
     },
     {
-      
       heading: 'Motivação',
       slug: 'motivacao',
       text: `A motivação é o que explica por que pessoas ou animais iniciam, continuam ou terminam um certo comportamento em um momento determinado. Os estados motivacionais são comumente entendidos como forças atuantes dentro do agente que criam uma disposição para se envolver em um comportamento direcionado a um objetivo. Frequentemente, afirma-se que diferentes estados mentais competem entre si e que apenas o estado mais forte determina o comportamento.[1] Isto significa que podemos ser motivados a fazer algo sem realmente fazê-lo. O estado mental paradigmático que proporciona motivação é o desejo. Mas vários outros estados, como crenças sobre o que se deve fazer ou intenções, também podem proporcionar motivação.
@@ -28,7 +33,6 @@ Várias teorias concorrentes foram propostas sobre o conteúdo dos estados motiv
       // author: this.user.name,
     },
     {
-      
       heading: 'redação',
       slug: 'redacao',
       text: `Redação (AO 1945: redacção) é o processo de redigir (escrever) um texto. É uma atividade presente na cultura civilizada desde a invenção da escrita, e atualmente considerada um campo profissional e artístico na literatura, na produção de roteiros, na elaboração de relatórios e documentos, na publicidade e no jornalismo, entre diversas outras áreas.[1] Por extensão, redação também é o termo usado no jargão jornalístico brasileiro para o ambiente de trabalho dos jornalistas de um veículo (jornal, revista, rádio e televisão).`,

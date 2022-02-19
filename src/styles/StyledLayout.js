@@ -8,7 +8,7 @@ export const Container = styled.div`
   width: 100%;
   /* border: 1px solid; */
   box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
-`;
+  `;
 
 /*HEADER */
 export const Header = styled.header`
@@ -17,9 +17,10 @@ export const Header = styled.header`
   max-width: 90%;
   margin: 0 auto;
   color: #ffffff;
-
+  
   /*MEDIAS SCREEN LG */
   @media (min-width: 992px) {
+    position: relative;
     grid-template-columns: 250px 3fr;
     width: 80%;
     max-width: 1000px;
@@ -77,6 +78,57 @@ export const SecondChildHeader = styled.div`
   }
 `;
 
+export const LoginButtonContainer = styled.div`
+  @media (min-width: 992px) {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 300px;
+    display: flex;
+    justify-content: end;
+  }
+`;
+
+export const ButtonIsAdmin = styled.button`
+  display: flex;
+  margin-left: 5px;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  width: 80px;
+  height: 35px;
+  color: goldenrod;
+  font-family: 'Ubuntu Condensed', sans-serif;
+  font-size: 0.88rem;
+  border-radius: 8px;
+  border: 2px solid goldenrod;
+  text-transform: uppercase;
+  span {
+    font-size: 0.78rem;
+    margin-left: 0.1rem;
+  }
+`;
+export const ButtonCommom = styled.button`
+  display: flex;
+  margin-left: 5px;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  width: 80px;
+  height: 35px;
+  color: #fff;
+  font-family: 'Ubuntu Condensed', sans-serif;
+  font-size: 0.88rem;
+  border-radius: 8px;
+  border: 2px solid #fff;
+  text-transform: capitalize;
+  span {
+    font-size: 0.78rem;
+    margin-left: 0.1rem;
+  }
+`;
+
+
 /*CONTENT */
 export const Main = styled.main`
   min-height: 80vh;
@@ -88,7 +140,6 @@ export const Main = styled.main`
     max-width: 1000px;
   }
 `;
-
 
 export const ContentMain = styled.div`
   display: grid;
@@ -124,11 +175,9 @@ export const SecondChildContent = styled.div`
   background: #ddd;
   font-family: 'Ubuntu Condensed', sans-serif;
 
-  @media (min-width: 992px) {
-    padding: 25px 18px;
-  }
+  /* @media (min-width: 992px) {
+  } */
 `;
-
 
 /*FOOTER  */
 export const Footer = styled.footer`
@@ -172,9 +221,10 @@ export const FirstChildFooter = styled.div`
       }
     }
       
-    }
+    
   }
 `;
+
 export const SecondChildFooter = styled.div`
   @media (min-width: 992px) {
     padding-left: 7px;

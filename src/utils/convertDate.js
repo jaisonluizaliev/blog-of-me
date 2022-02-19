@@ -1,7 +1,7 @@
 export const convertDate = (date) => {
   //all day of week and weekend
   const isItDayOfWeek = date.substr(0, 3);
-  const isItDayWasPosted = date.substr(8, 2);
+  const postedDay = date.substr(8, 2);
   const month = date.substr(4, 3);
   const year = date.substr(11, 4);
   const hour = date.substr(16, 2);
@@ -10,9 +10,9 @@ export const convertDate = (date) => {
   //it's return this format `whatsDayOfWeekIs, 13(it's the day which has been created ) de julho de 2012 13:32" `
   return `${whatsAWeekDay(
     isItDayOfWeek
-  )}, ${isItDayWasPosted} de ${whatsAMonthName(
+  )}, ${postedDay} de ${whatsAMonthName(
     month
-  )} de ${year} ${hour}h${minutes}`;
+  )} de ${year} às ${hour}h${minutes}`;
 };
 
 function whatsAWeekDay(isItDayOfWeek) {

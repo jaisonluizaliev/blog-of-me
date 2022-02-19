@@ -17,7 +17,9 @@ const GlobalStyle = createGlobalStyle`
 
   * {
     box-sizing: border-box;
+    list-style: none;
   }
+
 
 `;
 

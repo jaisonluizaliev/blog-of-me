@@ -4,7 +4,13 @@ import Layout from '../components/Layout';
 import db from '../utils/db';
 import Content from '../models/Content';
 import { convertDate } from '../utils/convertDate';
-import { Container, Error } from '../components/SlugPageStyles';
+import { Error } from '../styles/StyledError';
+import {
+  ContainerLayoutRight,
+  Paragraph,
+  PostedAt,
+  Title,
+} from '../styles/StyledContainerRight';
 
 export default function SlugPage({ content }) {
   if (!content) {
@@ -19,16 +25,17 @@ export default function SlugPage({ content }) {
 
   return (
     <Layout title={heading}>
-      <Container>
-        <h3>{heading}</h3>
-        <p>{text}</p>
-        <span>{convertDate(createdAt)}</span>
-      </Container>
+      <ContainerLayoutRight>
+        <Title>{heading}</Title>
+        <Paragraph>{text}</Paragraph>
+
+        <PostedAt>
+          <strong>Postado:</strong> {convertDate(createdAt)}
+        </PostedAt>
+      </ContainerLayoutRight>
     </Layout>
   );
 }
-
-
 
 export async function getServerSideProps(context) {
   const { slug } = context.params;

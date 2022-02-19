@@ -1,7 +1,10 @@
+import { RiLoginBoxLine } from 'react-icons/ri';
 import Head from 'next/head';
 import Image from 'next/image';
-import React from 'react';
+import React, { useContext } from 'react';
 import {
+  ButtonCommom,
+  ButtonIsAdmin,
   Container,
   ContentMain,
   FirstChildContent,
@@ -9,18 +12,32 @@ import {
   FirstChildHeader,
   Footer,
   Header,
+  LoginButtonContainer,
   Main,
   SecondChildContent,
   SecondChildFooter,
   SecondChildHeader,
-} from './StyledLayout';
+} from '../styles/StyledLayout';
 import NextLink from 'next/link';
+import { Store } from '../utils/store/Store';
+import jsCookie from 'js-cookie';
+import { useRouter } from 'next/router';
 
 export default function Layout({ children, title, contents }) {
+  const router = useRouter();
+
+  const { state, dispatch } = useContext(Store);
+  const { userInfo } = state;
+  const handleLogout = () => {
+    dispatch({ type: 'USER_LOGOUT' });
+    jsCookie.remove('userInfo');
+    router.push('/');
+  };
+
   return (
     <Container>
       <Head>
-        <title>{title ? `${title} - Jailson's Blog` : `Jailson's Blog`}</title>
+        <title>{title ? `${title} - Jaison's Blog` : `Jaison's Blog`}</title>
       </Head>
 
       <Header>
@@ -46,6 +63,37 @@ export default function Layout({ children, title, contents }) {
               chegar onde estou... &#34;
             </cite>
           </p>
+          <LoginButtonContainer>
+            {userInfo ? (
+              <>
+                {userInfo.isAdmin && (
+                  <ButtonIsAdmin type="button">{userInfo.name}</ButtonIsAdmin>
+                )}
+
+                {!userInfo.isAdmin && (
+                  <ButtonCommom type="button">{userInfo.name}</ButtonCommom>
+                )}
+
+                <ButtonCommom type="button" onClick={handleLogout}>
+                  Sair
+                  <span>
+                    <RiLoginBoxLine />
+                  </span>
+                </ButtonCommom>
+              </>
+            ) : (
+              <>
+                <NextLink href="/login" passHref>
+                  <ButtonCommom type="button">
+                    Entrar
+                    <span>
+                      <RiLoginBoxLine />
+                    </span>
+                  </ButtonCommom>
+                </NextLink>
+              </>
+            )}
+          </LoginButtonContainer>
         </SecondChildHeader>
       </Header>
       <Main>
@@ -59,12 +107,13 @@ export default function Layout({ children, title, contents }) {
             </NextLink>
             {contents &&
               contents.map((body) => (
-                <NextLink href={body.slug} passHref key={body._id}>
-                  <div>
-                    <a>&#34;{body.heading.substring(0, 18)}&#34;</a>
-                 
-                  </div>
-                </NextLink>
+                <div key={body.slug}>
+                  <NextLink href={body.slug} passHref>
+                    <div>
+                      <a>&#34;{body.heading.substr(0, 10)}...&#34;</a>
+                    </div>
+                  </NextLink>
+                </div>
               ))}
           </FirstChildContent>
           <SecondChildContent>{children}</SecondChildContent>
