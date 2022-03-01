@@ -7,7 +7,7 @@ import NextLink from 'next/link';
 import { Store } from '../utils/store/Store';
 import { useRouter } from 'next/router';
 import jsCookie from 'js-cookie';
-import Inputs from '../components/inputs';
+import Input from '../components/inputs';
 
 const Login = () => {
   const router = useRouter();
@@ -47,7 +47,7 @@ const Login = () => {
         <Form onSubmit={submitHandler}>
           <ul>
             <li>
-              <Inputs
+              <Input
                 label="Email"
                 htmlFor="email"
                 type="email"
@@ -57,7 +57,7 @@ const Login = () => {
               />
             </li>
             <li>
-              <Inputs
+              <Input
                 label="Senha"
                 htmlFor="password"
                 type="password"

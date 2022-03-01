@@ -5,7 +5,7 @@ import { ButtonForm, Form } from '../styles/StyledForm';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import { Store } from '../utils/store/Store';
-import Inputs from '../components/inputs';
+import Input from '../components/inputs';
 import axios from 'axios';
 import jsCookie from 'js-cookie';
 
@@ -53,7 +53,7 @@ const Register = () => {
         <Form onSubmit={submitHandler}>
           <ul>
             <li>
-              <Inputs
+              <Input
                 label="Nome"
                 htmlFor="name"
                 type="text"
@@ -63,7 +63,7 @@ const Register = () => {
               />
             </li>
             <li>
-              <Inputs
+              <Input
                 label="Email"
                 htmlFor="email"
                 type="email"
@@ -73,7 +73,7 @@ const Register = () => {
               />
             </li>
             <li>
-              <Inputs
+              <Input
                 label="Senha"
                 htmlFor="password"
                 type="password"
@@ -83,7 +83,7 @@ const Register = () => {
               />
             </li>
             <li>
-              <Inputs
+              <Input
                 label="Confirmar Senha"
                 htmlFor="confirmPassword"
                 type="password"

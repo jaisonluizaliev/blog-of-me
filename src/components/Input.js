@@ -1,7 +1,7 @@
 import React from 'react';
 import { FieldSetText } from '../styles/StyledForm';
 
-export default function Inputs({
+export default function Input({
   label,
   htmlFor,
   type,
