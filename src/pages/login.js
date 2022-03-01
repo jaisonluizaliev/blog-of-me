@@ -2,25 +2,26 @@ import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import Layout from '../components/Layout';
 import { ContainerLayoutRight, Title } from '../styles/StyledContainerRight';
-import { ButtonForm, FieldSetText, Form } from '../styles/StyledForm';
+import { ButtonForm, Form } from '../styles/StyledForm';
 import NextLink from 'next/link';
 import { Store } from '../utils/store/Store';
 import { useRouter } from 'next/router';
 import jsCookie from 'js-cookie';
+import Inputs from '../components/inputs';
 
 const Login = () => {
   const router = useRouter();
   const { redirect } = router.query;
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const { state , dispatch} = useContext(Store);
+  const { state, dispatch } = useContext(Store);
   const { userInfo } = state;
 
   useEffect(() => {
     if (userInfo) {
       router.push('/');
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const submitHandler = async (e) => {
@@ -31,9 +32,9 @@ const Login = () => {
         email,
         password,
       });
-      dispatch({type: 'USER_LOGIN', payload: data});
+      dispatch({ type: 'USER_LOGIN', payload: data });
       jsCookie.set('userInfo', JSON.stringify(data));
-      router.push(redirect || '/')
+      router.push(redirect || '/');
     } catch (error) {
       alert(error.response.data ? error.response.data.message : error.message);
     }
@@ -46,28 +47,24 @@ const Login = () => {
         <Form onSubmit={submitHandler}>
           <ul>
             <li>
-              <FieldSetText>
-                <label htmlFor="email">Email </label>
-
-                <input
-                  type="text"
-                  name="email"
-                  id="email"
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </FieldSetText>
+              <Inputs
+                label="Email"
+                htmlFor="email"
+                type="email"
+                name="email"
+                id="email"
+                onChange={(e) => setEmail(e.target.value)}
+              />
             </li>
             <li>
-              <FieldSetText>
-                <label htmlFor="password">Senha </label>
-
-                <input
-                  type="password"
-                  name="password"
-                  id="password"
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-              </FieldSetText>
+              <Inputs
+                label="Senha"
+                htmlFor="password"
+                type="password"
+                name="password"
+                id="password"
+                onChange={(e) => setPassword(e.target.value)}
+              />
             </li>
             <li>
               <ButtonForm>
@@ -76,7 +73,7 @@ const Login = () => {
             </li>
             <li className="not-account">
               Não tem Conta? &nbsp;
-              <NextLink href="/register" passHref>
+              <NextLink href={`/register?redirect=${redirect || '/'}`} passHref>
                 <a>
                   <strong>Registre-se</strong>
                 </a>

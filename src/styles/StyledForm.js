@@ -13,6 +13,9 @@ export const Form = styled.form`
     margin: 0 auto;
     padding: 15px 30px;
   }
+  li:first-child {
+    padding-top: 17px;
+  }
 
   .not-account {
     color: #eee;
@@ -29,22 +32,24 @@ export const FieldSetText = styled.fieldset`
 
   border: unset;
   display: grid;
-  margin: 0 auto;
+  
   @media (min-width: 992px) {
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 1fr 2.8fr;
 
     label {
       font-size: 1.15rem;
       color: #fff;
       display: flex;
       align-items: center;
+      justify-content: flex-start;
       margin-left: 0;
+      
     }
 
     input {
       height: 35px;
       font-family: 'Ubuntu Condensed', sans-serif;
-
+      width: 245px;
       border-radius: 4px;
       outline: none;
       border: 0;

@@ -17,9 +17,8 @@ export const Title = styled.h1`
 export const Paragraph = styled.p`
   @media (min-width: 992px) {
     font-size: 1.1rem;
+    /* color: ${({ admin }) => admin && 'goldenrod'}; */
   }
 `;
 
-export const PostedAt = styled.span`
-  
-`;
+export const PostedAt = styled.span``;

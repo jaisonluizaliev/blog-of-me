@@ -2,22 +2,28 @@ import styled from 'styled-components';
 
 /*CONTAINER LAYOUT */
 export const Container = styled.div`
-  background-color: #2121e673;
-  /* border: 1px solid; */
+  background-color: ${(props) => props.theme.colors.primary};
+
   padding: 15px;
   width: 100%;
   /* border: 1px solid; */
   box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
-  `;
+`;
+
 
 /*HEADER */
 export const Header = styled.header`
   background-color: #1c0d3f;
+  border-top: ${({ theme }) => theme.border.admin};
+  border-left: ${({ theme }) => theme.border.admin};
+  border-right: ${({ theme }) => theme.border.admin};
+  border-bottom: ${({ theme }) => theme.border.admin};
+
   display: grid;
   max-width: 90%;
   margin: 0 auto;
   color: #ffffff;
-  
+
   /*MEDIAS SCREEN LG */
   @media (min-width: 992px) {
     position: relative;
@@ -89,7 +95,7 @@ export const LoginButtonContainer = styled.div`
   }
 `;
 
-export const ButtonIsAdmin = styled.button`
+export const Button = styled.button`
   display: flex;
   margin-left: 5px;
   justify-content: center;
@@ -97,37 +103,18 @@ export const ButtonIsAdmin = styled.button`
   background: transparent;
   width: 80px;
   height: 35px;
-  color: goldenrod;
+  color: ${(props) => (props.isAdmin ? 'goldenrod' : '#fff')};
   font-family: 'Ubuntu Condensed', sans-serif;
   font-size: 0.88rem;
   border-radius: 8px;
-  border: 2px solid goldenrod;
-  text-transform: uppercase;
-  span {
-    font-size: 0.78rem;
-    margin-left: 0.1rem;
-  }
-`;
-export const ButtonCommom = styled.button`
-  display: flex;
-  margin-left: 5px;
-  justify-content: center;
-  align-items: center;
-  background: transparent;
-  width: 80px;
-  height: 35px;
-  color: #fff;
-  font-family: 'Ubuntu Condensed', sans-serif;
-  font-size: 0.88rem;
-  border-radius: 8px;
-  border: 2px solid #fff;
-  text-transform: capitalize;
-  span {
-    font-size: 0.78rem;
-    margin-left: 0.1rem;
-  }
+  border: 2px solid ${(props) => (props.isAdmin ? 'goldenrod' : ' #fff')};
+  text-transform: ${(props) => (props.isAdmin ? 'uppercase' : 'capitalize')};
 `;
 
+export const Span = styled.span`
+  font-size: 0.78rem;
+  margin-left: 0.1rem;
+`;
 
 /*CONTENT */
 export const Main = styled.main`
@@ -135,6 +122,9 @@ export const Main = styled.main`
   background-color: #fff;
   margin: 0 auto;
   max-width: 90%;
+
+  border-left: ${({ theme }) => theme.border.admin};
+  border-right: ${({ theme }) => theme.border.admin};
   @media (min-width: 992px) {
     width: 80%;
     max-width: 1000px;
@@ -193,6 +183,12 @@ export const Footer = styled.footer`
   color: #fff;
   grid-template-columns: 1fr;
 
+  border-top: ${({ theme }) => theme.border.admin};
+
+  border-bottom: ${({ theme }) => theme.border.admin};
+  border-left: ${({ theme }) => theme.border.admin};
+  border-right: ${({ theme }) => theme.border.admin};
+
   @media (min-width: 992px) {
     grid-template-columns: 1fr 1fr;
     width: 80%;
@@ -213,15 +209,12 @@ export const FirstChildFooter = styled.div`
       border-radius: 4px;
       font-size: 0.9rem;
       padding: 5px;
-      background: #3CBA4D;
+      background: #3cba4d;
       a {
         display: flex;
-        justify-content:center;
-
+        justify-content: center;
       }
     }
-      
-    
   }
 `;
 

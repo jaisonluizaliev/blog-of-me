@@ -3,6 +3,7 @@ import React from 'react';
 import Layout from '../components/Layout';
 import db from '../utils/db';
 import Content from '../models/Content';
+import dynamic from 'next/dynamic';
 import { convertDate } from '../utils/convertDate';
 import { Error } from '../styles/StyledError';
 import {
@@ -12,7 +13,7 @@ import {
   Title,
 } from '../styles/StyledContainerRight';
 
-export default function SlugPage({ content }) {
+function SlugPage({ content }) {
   if (!content) {
     return (
       <Layout>
@@ -36,6 +37,8 @@ export default function SlugPage({ content }) {
     </Layout>
   );
 }
+
+export default dynamic(() => Promise.resolve(SlugPage), { ssr: false });
 
 export async function getServerSideProps(context) {
   const { slug } = context.params;
