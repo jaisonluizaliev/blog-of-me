@@ -126,7 +126,7 @@ function Layout({ children, title, contents }) {
               </NextLink>
               {contents &&
                 contents.map((body) => (
-                  <div key={body.slug}>
+                  <div key={body?._id}>
                     <NextLink href={body.slug} passHref>
                       <div>
                         <a>&#34;{body.heading.substr(0, 10)}...&#34;</a>

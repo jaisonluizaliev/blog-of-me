@@ -1,7 +1,8 @@
+import dynamic from 'next/dynamic';
 import React from 'react';
 import { FieldSetText } from '../styles/StyledForm';
 
-export default function Input({
+function Input({
   label,
   htmlFor,
   type,
@@ -16,3 +17,6 @@ export default function Input({
     </FieldSetText>
   );
 }
+
+export default dynamic(() => Promise.resolve(Input), { ssr: false });
+

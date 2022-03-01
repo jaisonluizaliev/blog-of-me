@@ -7,7 +7,7 @@ import NextLink from 'next/link';
 import { Store } from '../utils/store/Store';
 import { useRouter } from 'next/router';
 import jsCookie from 'js-cookie';
-import Input from '../components/inputs';
+import Input from '../components/Input';
 
 const Login = () => {
   const router = useRouter();

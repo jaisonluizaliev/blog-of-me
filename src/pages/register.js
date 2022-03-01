@@ -5,7 +5,7 @@ import { ButtonForm, Form } from '../styles/StyledForm';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import { Store } from '../utils/store/Store';
-import Input from '../components/inputs';
+import Input from '../components/Input';
 import axios from 'axios';
 import jsCookie from 'js-cookie';
 
