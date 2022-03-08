@@ -20,8 +20,7 @@ const data = {
       heading: 'Depressão é um transtorno mental',
       slug: 'depressão-e-um-transtorno-mental',
       text: 'Depressão é um transtorno mental caracterizado por tristeza profunda persistente e aversão a atividades. Pode afetar os pensamentos, comportamentos, sentimentos e o bem-estar de uma pessoa.[1][2] As pessoas deprimidas podem sentir-se tristes, ansiosas, desesperadas, vazias, preocupadas, impotentes, inúteis, culpadas, irritadas, magoadas ou inquietas. Podem perder o interesse em atividades que antes eram prazerosas, podem perder o apetite ou comer demais, apresentar problemas de concentração, dificuldade para lembrar detalhes ou tomar decisões e podem contemplar ou tentar o suicídio. Problemas de insônia, sono excessivo, fadiga, perda de energia, mudança na alimentação, sofrimento, dores ou problemas digestivos resistentes a tratamento também podem estar presentes.[3]',
-
-      // author: this.user.name,
+      author: {},
     },
     {
       heading: 'Motivação',
@@ -31,11 +30,13 @@ const data = {
 Várias teorias concorrentes foram propostas sobre o conteúdo dos estados motivacionais. Elas são conhecidas como teorias de conteúdo e visam descrever quais objetivos geralmente ou sempre motivam as pessoas. A hierarquia de necessidades de Abraham Maslow e a teoria ERG, por exemplo, postulam que os seres humanos têm certas necessidades, que são responsáveis pela motivação. Algumas dessas necessidades, como a de comida e água, são mais básicas do que outras necessidades, como a de respeito por parte dos outros. Nesta visão, as necessidades superiores só podem proporcionar motivação uma vez que as necessidades inferiores forem satisfeitas.[2] As teorias behavioristas tentam explicar o comportamento apenas em termos da relação entre a situação e o comportamento externo e observável, sem referência explícita a estados mentais conscientes.`,
 
       // author: this.user.name,
+      author: {},
     },
     {
       heading: 'redação',
       slug: 'redacao',
       text: `Redação (AO 1945: redacção) é o processo de redigir (escrever) um texto. É uma atividade presente na cultura civilizada desde a invenção da escrita, e atualmente considerada um campo profissional e artístico na literatura, na produção de roteiros, na elaboração de relatórios e documentos, na publicidade e no jornalismo, entre diversas outras áreas.[1] Por extensão, redação também é o termo usado no jargão jornalístico brasileiro para o ambiente de trabalho dos jornalistas de um veículo (jornal, revista, rádio e televisão).`,
+      author: {},
 
       // author: this.user.name,
     },
@@ -47,6 +48,7 @@ Várias teorias concorrentes foram propostas sobre o conteúdo dos estados motiv
 Portanto, se uma pessoa acredita, confia ou aposta em algo, não significa necessariamente que ela tenha fé. Diante dessas considerações, embora não se observe oposição entre crença e racionalidade, como muitos parecem pensar, deve-se atentar para o fato de que tal oposição é real no caso da fé, principalmente no que diz respeito às suas implicações no processo de aquisição de conhecimento, que pode ser resumida à oposição direta à dúvida e ao importante papel que essa última desempenha na aprendizagem. É possível nutrir um sentimento de fé em relação a uma pessoa, um objeto inanimado, uma ideologia, um pensamento filosófico, um sistema qualquer, um conjunto de regras, um paradigma popular social e historicamente instituído, uma base de propostas ou dogmas de uma determinada religião. Tal sentimento não se sustenta em evidências, provas ou entendimento racional (ainda que este último critério seja amplamente discutido dentro da epistemologia e possa se refletir em sofismos ou falácias que o justifiquem de modo ilusório) e portanto, alegações baseadas em fé não são reconhecidas pela comunidade científica como parâmetro legítimo de reconhecimento ou avaliação da verdade de um postulado.
 
 É geralmente associada a experiências pessoais e herança cultural podendo ser compartilhada com outros através de relatos, principalmente (mas não exclusivamente) no contexto religioso, e usada frequentemente como justificativa para a própria crença em que se tem fé, o que caracteriza raciocínio circular. A fé se manifesta de várias maneiras e pode estar vinculada a questões emocionais (tais como reconforto em momentos de aflição desprovidos de sinais de futura melhora, relacionando-se com esperança) e a motivos considerados moralmente nobres ou estritamente pessoais e egoístas. Pode estar direcionada a alguma razão específica (que a justifique) ou mesmo existir sem razão definida. E como mencionado anteriormente, também não carece absolutamente de qualquer tipo de argumento racional.`,
+      author: {},
 
       // author: this.user.name,
     },
@@ -54,6 +56,7 @@ Portanto, se uma pessoa acredita, confia ou aposta em algo, não significa neces
       heading: 'Deus',
       slug: 'deus',
       text: 'a razão de vivermos é por ele',
+      author: {},
 
       // author: this.user.name,
     },

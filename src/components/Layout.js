@@ -43,11 +43,16 @@ function Layout({ children, title, contents }) {
 
   const theme = {
     colors: {
-      primary: userInfo?.isAdmin ? 'goldenrod' : '#2121e673',
+      primary: userInfo?.isAdmin ? '#d3b056' : '#2121e673',
+      background: userInfo?.isAdmin ? '#333' : '#1c0d3f',
+      perfil: userInfo?.isAdmin ? '#b58610' : '#15a4c5',
+      colorOfBtnTop: userInfo?.isAdmin ? 'goldenrod' : '#fff',
+      borderOfBtnTop: userInfo?.isAdmin ? 'goldenrod' : ' #fff',
+      textOfBtnTop: userInfo?.isAdmin ? 'uppercase' : 'capitalize' ,
     },
-    border: {
-      admin: userInfo?.isAdmin ? '1px solid goldenrod' : '',
-    },
+    // border: {
+    //   admin: userInfo?.isAdmin ? '1px solid #333' : '',
+    // },
   };
 
   return (
@@ -57,7 +62,7 @@ function Layout({ children, title, contents }) {
       </Head>
 
       <Container primary>
-        <Header border>
+        <Header >
           <FirstChildHeader>
             <span>
               <div>
@@ -91,7 +96,9 @@ function Layout({ children, title, contents }) {
                       Gestor
                     </Button>
                   )}
-                  {!userInfo?.isAdmin && <Button>Usuario</Button>}
+                  {!userInfo?.isAdmin && (
+                    <Button onClick={pushToDashboard}>Usuario</Button>
+                  )}
 
                   <Button type="button" onClick={handleLogout}>
                     Sair
@@ -115,7 +122,7 @@ function Layout({ children, title, contents }) {
             </LoginButtonContainer>
           </SecondChildHeader>
         </Header>
-        <Main border>
+        <Main >
           <ContentMain>
             <FirstChildContent>
               <h4>Últimas Postagens</h4>
@@ -138,7 +145,7 @@ function Layout({ children, title, contents }) {
             <SecondChildContent>{children}</SecondChildContent>
           </ContentMain>
         </Main>
-        <Footer border>
+        <Footer >
           <FirstChildFooter>
             <h3>Contato</h3>
             <div>Email: jaison.alieve@gmail.com</div>

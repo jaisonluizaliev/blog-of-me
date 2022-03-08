@@ -4,6 +4,7 @@ import { FieldSetText } from '../styles/StyledForm';
 
 function Input({
   label,
+  component: Component,
   htmlFor,
   type,
   name,
@@ -13,7 +14,7 @@ function Input({
   return (
     <FieldSetText>
       <label htmlFor={htmlFor}>{label}</label>
-      <input type={type} name={name} id={id} {...restProps} />
+      <Component type={type} name={name} id={id} {...restProps} />
     </FieldSetText>
   );
 }

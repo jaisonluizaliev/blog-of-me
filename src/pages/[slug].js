@@ -12,6 +12,7 @@ import {
   PostedAt,
   Title,
 } from '../styles/StyledContainerRight';
+// import { toCapitalize } from '../utils/stringsManipulate';
 
 function SlugPage({ content }) {
   if (!content) {
@@ -31,7 +32,8 @@ function SlugPage({ content }) {
         <Paragraph>{text}</Paragraph>
 
         <PostedAt>
-          <strong>Postado:</strong> {convertDate(createdAt)}
+          <strong>Postado por :</strong>{' '}
+          {convertDate(createdAt)}
         </PostedAt>
       </ContainerLayoutRight>
     </Layout>
@@ -46,6 +48,8 @@ export async function getServerSideProps(context) {
   await db.connect();
   const content = await Content.findOne({ slug }).lean();
   await db.disconnect();
+
+  console.log(content)
 
   return {
     props: {

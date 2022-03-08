@@ -38,9 +38,6 @@ export async function getServerSideProps() {
   await db.connect();
   const allContent = await Content.find({}).lean();
   await db.disconnect();
-  // allContent._id = allContent._id.toString();
-  // allContent.createdAt = allContent.createdAt.toString();
-  // allContent.updatedAt = allContent.updatedAt.toString();
 
   return {
     props: {

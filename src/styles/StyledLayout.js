@@ -10,14 +10,9 @@ export const Container = styled.div`
   box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
 `;
 
-
 /*HEADER */
 export const Header = styled.header`
-  background-color: #1c0d3f;
-  border-top: ${({ theme }) => theme.border.admin};
-  border-left: ${({ theme }) => theme.border.admin};
-  border-right: ${({ theme }) => theme.border.admin};
-  border-bottom: ${({ theme }) => theme.border.admin};
+  background-color: ${({ theme }) => theme.colors.background};
 
   display: grid;
   max-width: 90%;
@@ -53,10 +48,9 @@ export const FirstChildHeader = styled.div`
     span {
       padding: 15px 0 0;
       div {
-        /* width: 100%; */
         padding: 5px;
-        /* background-color: #1c0d3f; */
-        background-color: #15a4c5;
+        background: ${({ theme }) => theme.colors.perfil};
+
         border-radius: 4px;
         img {
           width: 140px;
@@ -103,12 +97,12 @@ export const Button = styled.button`
   background: transparent;
   width: 80px;
   height: 35px;
-  color: ${(props) => (props.isAdmin ? 'goldenrod' : '#fff')};
+  color: ${({ theme }) => theme.colors.colorOfBtnTop};
   font-family: 'Ubuntu Condensed', sans-serif;
   font-size: 0.88rem;
   border-radius: 8px;
-  border: 2px solid ${(props) => (props.isAdmin ? 'goldenrod' : ' #fff')};
-  text-transform: ${(props) => (props.isAdmin ? 'uppercase' : 'capitalize')};
+  border: 2px solid ${({ theme }) => theme.colors.borderOfBtnTop};
+  text-transform: ${({ theme }) => theme.colors.textOfBtnTop};
 `;
 
 export const Span = styled.span`
@@ -123,8 +117,6 @@ export const Main = styled.main`
   margin: 0 auto;
   max-width: 90%;
 
-  border-left: ${({ theme }) => theme.border.admin};
-  border-right: ${({ theme }) => theme.border.admin};
   @media (min-width: 992px) {
     width: 80%;
     max-width: 1000px;
@@ -141,7 +133,7 @@ export const ContentMain = styled.div`
 
 export const FirstChildContent = styled.div`
   min-height: 80vh;
-  background: #15a4c5;
+  background: ${({ theme }) => theme.colors.perfil};
   @media (min-width: 992px) {
     padding: 7px 10px;
     h4 {
@@ -171,7 +163,6 @@ export const SecondChildContent = styled.div`
 
 /*FOOTER  */
 export const Footer = styled.footer`
-  background-color: #ffffff;
   /* margin: 0 auto 0; */
   padding: 10px;
   display: grid;
@@ -179,15 +170,10 @@ export const Footer = styled.footer`
   max-width: 90%;
   margin: 0 auto;
   min-height: 30vh;
-  background-color: #1c0d3f;
+  background-color: ${({ theme }) => theme.colors.background};
+
   color: #fff;
   grid-template-columns: 1fr;
-
-  border-top: ${({ theme }) => theme.border.admin};
-
-  border-bottom: ${({ theme }) => theme.border.admin};
-  border-left: ${({ theme }) => theme.border.admin};
-  border-right: ${({ theme }) => theme.border.admin};
 
   @media (min-width: 992px) {
     grid-template-columns: 1fr 1fr;

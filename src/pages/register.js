@@ -54,6 +54,7 @@ const Register = () => {
           <ul>
             <li>
               <Input
+                component="input"
                 label="Nome"
                 htmlFor="name"
                 type="text"
@@ -64,6 +65,7 @@ const Register = () => {
             </li>
             <li>
               <Input
+                component="input"
                 label="Email"
                 htmlFor="email"
                 type="email"
@@ -74,6 +76,7 @@ const Register = () => {
             </li>
             <li>
               <Input
+                component="input"
                 label="Senha"
                 htmlFor="password"
                 type="password"
@@ -84,6 +87,7 @@ const Register = () => {
             </li>
             <li>
               <Input
+                component="input"
                 label="Confirmar Senha"
                 htmlFor="confirmPassword"
                 type="password"

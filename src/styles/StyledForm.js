@@ -9,7 +9,7 @@ export const Form = styled.form`
 
   ul {
     max-width: 440px;
-    background-color: #15a4c5;
+    background-color: ${({ theme }) => theme.colors.perfil};
     margin: 0 auto;
     padding: 15px 30px;
   }
@@ -32,7 +32,7 @@ export const FieldSetText = styled.fieldset`
 
   border: unset;
   display: grid;
-  
+
   @media (min-width: 992px) {
     grid-template-columns: 1fr 2.8fr;
 
@@ -43,14 +43,25 @@ export const FieldSetText = styled.fieldset`
       align-items: center;
       justify-content: flex-start;
       margin-left: 0;
-      
     }
 
     input {
       height: 35px;
       font-family: 'Ubuntu Condensed', sans-serif;
+
       width: 245px;
       border-radius: 4px;
+      outline: none;
+      border: 0;
+      padding-left: 8px;
+      font-size: 1.03rem;
+    }
+    textarea {
+      min-height: 80px;
+      width: 245px;
+      border-radius: 4px;
+      font-family: 'Ubuntu Condensed', sans-serif;
+
       outline: none;
       border: 0;
       padding-left: 8px;
@@ -71,7 +82,7 @@ export const ButtonForm = styled.div`
       font-family: 'Ubuntu Condensed', sans-serif;
       height: 40px;
       border-radius: 5px;
-      background-color: #1c0d3f;
+      background-color:${({theme})=> theme.colors.background};
       color: #fff;
       width: 150px;
       font-size: 1rem;

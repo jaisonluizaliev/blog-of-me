@@ -18,15 +18,15 @@ export const convertDate = (date) => {
 function whatsAWeekDay(isItDayOfWeek) {
   switch (isItDayOfWeek) {
     case 'Mon':
-      return `Segunda - Feira`;
+      return `Segunda-Feira`;
     case 'Tue':
-      return `Terça - Feira`;
+      return `Terça-Feira`;
     case 'Wed':
-      return `Quarta - Feira`;
+      return `Quarta-Feira`;
     case 'Thu':
-      return `Quinta - Feira`;
+      return `Quinta-Feira`;
     case 'Fri':
-      return `Sexta - Feira`;
+      return `Sexta-Feira`;
     case 'Sat':
       return `Sábado`;
     case 'Sun':

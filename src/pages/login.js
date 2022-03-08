@@ -48,6 +48,7 @@ const Login = () => {
           <ul>
             <li>
               <Input
+                component="input"
                 label="Email"
                 htmlFor="email"
                 type="email"
@@ -58,6 +59,7 @@ const Login = () => {
             </li>
             <li>
               <Input
+                component="input"
                 label="Senha"
                 htmlFor="password"
                 type="password"

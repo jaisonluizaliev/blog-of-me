@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 
+
 const contentsSchema = new mongoose.Schema(
   {
     heading: { type: String, required: true },
