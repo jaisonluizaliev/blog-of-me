@@ -5,6 +5,7 @@ import User from '../../models/User';
 import { ContainerLayoutRight, Title } from '../../styles/StyledContainerRight';
 import db from '../../utils/db';
 
+// eslint-disable-next-line no-unused-vars
 export default function PostManagement({ contents, users }) {
   return (
     <Layout>
