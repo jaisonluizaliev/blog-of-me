@@ -6,13 +6,9 @@ import { Store } from '../../utils/store/Store';
 import NextLink from 'next/link';
 import { ButtonForm } from '../../styles/StyledForm';
 import { toCapitalize } from '../../utils/stringsManipulate';
-// import dynamic from 'next/dynamic';
-// const { toCapitalize } = dynamic(
-//   () => import('../../utils/stringsManipulate'),
-//   { ssr: false }
-// );
+import dynamic from 'next/dynamic';
 
-export default function Dashboard() {
+function Dashboard() {
   const { state } = useContext(Store);
   const { userInfo } = state;
   const router = useRouter();
@@ -29,8 +25,8 @@ export default function Dashboard() {
       <ContainerLayoutRight>
         <Title> 
           Painel do Admin ( logado como{' '}
-          {userInfo?.isAdmin
-            ? `${userInfo?.name.toUpperCase()} `
+          {userInfo.isAdmin
+            ? `${userInfo.name.toUpperCase()} `
             : `${toCapitalize(userInfo.name)} `}{' '}
           )
         </Title>
@@ -54,3 +50,6 @@ export default function Dashboard() {
     </Layout>
   );
 }
+
+
+export default dynamic(() => Promise.resolve(Dashboard), { ssr: false });
