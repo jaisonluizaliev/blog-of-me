@@ -6,6 +6,11 @@ import { Store } from '../../utils/store/Store';
 import NextLink from 'next/link';
 import { ButtonForm } from '../../styles/StyledForm';
 import { toCapitalize } from '../../utils/stringsManipulate';
+// import dynamic from 'next/dynamic';
+// const { toCapitalize } = dynamic(
+//   () => import('../../utils/stringsManipulate'),
+//   { ssr: false }
+// );
 
 export default function Dashboard() {
   const { state } = useContext(Store);
@@ -26,7 +31,7 @@ export default function Dashboard() {
           Painel do Admin ( logado como{' '}
           {userInfo?.isAdmin
             ? `${userInfo?.name.toUpperCase()} `
-            : `${toCapitalize(userInfo?.name)} `}{' '}
+            : `${toCapitalize(userInfo.name)} `}{' '}
           )
         </Title>
         Painel do Admin <br /> Meus Posts (descobrir como mostrar apenas deste
