@@ -50,9 +50,6 @@ function Layout({ children, title, contents }) {
       borderOfBtnTop: userInfo?.isAdmin ? 'goldenrod' : ' #fff',
       textOfBtnTop: userInfo?.isAdmin ? 'uppercase' : 'capitalize' ,
     },
-    // border: {
-    //   admin: userInfo?.isAdmin ? '1px solid #333' : '',
-    // },
   };
 
   return (

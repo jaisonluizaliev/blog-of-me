@@ -23,7 +23,7 @@ function SlugPage({ content }) {
     );
   }
 
-  const { heading, text, createdAt } = content;
+  const { heading, text, createdAt, author } = content;
 
   return (
     <Layout title={heading}>
@@ -32,7 +32,7 @@ function SlugPage({ content }) {
         <Paragraph>{text}</Paragraph>
 
         <PostedAt>
-          <strong>Postado por :</strong>{' '}
+          <strong>Postado por {author ? author : ''} :</strong>{' '}
           {convertDate(createdAt)}
         </PostedAt>
       </ContainerLayoutRight>

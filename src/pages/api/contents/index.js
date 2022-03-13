@@ -1,6 +1,5 @@
 import nc from 'next-connect';
 import Content from '../../../models/Content';
-// import User from '../../../models/User';
 import db from '../../../utils/db';
 
 const handler = nc();
@@ -14,8 +13,12 @@ handler.get(async (req, res) => {
   res.send(contents);
 });
 
+
+
 handler.post(async (req, res)=> {
-  await db.connect(); 
+  await db.connect();
+  
+  
 
   const newContent = new Content({
     heading: req.body.heading,

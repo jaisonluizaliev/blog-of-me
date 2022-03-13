@@ -25,9 +25,9 @@ function Dashboard() {
       <ContainerLayoutRight>
         <Title> 
           Painel do Admin ( logado como{' '}
-          {userInfo.isAdmin
-            ? `${userInfo.name.toUpperCase()} `
-            : `${toCapitalize(userInfo.name)} `}{' '}
+          {userInfo?.isAdmin
+            ? `${userInfo?.name.toUpperCase()} `
+            : `${toCapitalize(userInfo.name)} `}
           )
         </Title>
         Painel do Admin <br /> Meus Posts (descobrir como mostrar apenas deste
