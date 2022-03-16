@@ -25,21 +25,29 @@ function PostManagement({ contents, users }) {
     if (!isAdmin) {
       router.push('/admin/dashboard');
     }
+    if(isAdmin === null) {
+      router.push('/')
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  console.log(users);
   return (
     <Layout>
       <ContainerLayoutRight>
         <Title>Gerenciamento Do Administrador</Title>
         Editar Usuarios
         {users.map((user) => (
-          <div key={user._id}>{user.name}</div>
+          <div key={user._id}>
+            <Link href={`/admin/post-management/edit-user/${user._id}`}>
+              {user.name}
+            </Link>
+          </div>
         ))}
         <br /> Editar Posts
         {contents.map((content) => (
           <div key={content._id}>
-            <Link href={`/admin/post-management/edit-post/${content._id}`}>{content.heading}</Link>
+            <Link href={`/admin/post-management/edit-post/${content._id}`}>
+              {content.heading}
+            </Link>
           </div>
         ))}
         <br />
